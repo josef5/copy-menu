@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let EDIT_WINDOW_ID = "edit-window"
+
 @main
 struct CopyMenuApp: App {
     @StateObject private var viewModel = CopyMenuViewModel()
