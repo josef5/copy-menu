@@ -13,15 +13,21 @@ struct MenuBarView: View {
     
     var body: some View {
         ForEach(viewModel.menuItems, id: \.self) { item in
-            Button(item) {
-                print("Selected: \(item)")
+            Button(item.title) {
+                print("Selected: \(item.title)")
             }
         }
         
         Divider()
         
         Button("Edit") {
-            openWindow(id: "edit-menu")
+            openWindow(id: EDIT_WINDOW_ID)
+        }
+        
+        Divider()
+        
+        Button("Quit") {
+            
         }
     }
 }
