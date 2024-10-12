@@ -20,11 +20,13 @@ struct CopyMenuApp: App {
         }
         .menuBarExtraStyle(.menu)
         
-        Window("Edit Menu", id: "edit-menu") {
-            Text("New in this version…")
-            Button("Close") {
-                dismissWindow(id: "edit-menu")
-            }
+        Window("Edit Menu", id: EDIT_WINDOW_ID) {
+            ContentView(viewModel: viewModel)
+                .frame(minWidth: 350, minHeight: 250)
+//                .fixedSize()
         }
+        .windowResizability(.contentSize)
+        .defaultPosition(.center)
+//        .windowLevel(.floating)
     }
 }
