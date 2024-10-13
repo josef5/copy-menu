@@ -12,7 +12,6 @@ struct ContentView: View {
     @Environment(\.dismissWindow) private var dismissWindow
     
     var body: some View {
-        //        GeometryReader { geometry in
         VStack {
             Text("Items").bold()
             
@@ -52,34 +51,16 @@ struct ContentView: View {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)
                             }
-                            .buttonStyle(BorderlessButtonStyle()) // Prevent interference with List row tap gesture
+                            .buttonStyle(BorderlessButtonStyle())
                         }
                     }
                     .listRowSeparator(.hidden)
                 }
-                //                .onDelete(perform: viewModel.deleteItems)
                 .onMove(perform: viewModel.moveItems)
             }
-            //                .formStyle(.automatic)
-            //            .formStyle(.columns)
-            //            .frame(maxWidth: 400, minHeight: 0)
-            //            .padding()
-            //            .background(.red)
-            //            .foregroundColor(.red)
-//                        .fixedSize()
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
-            
-            //            .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
-            //            .clipShape(Rectangle())
-            //            .frame(maxHeight: min(CGFloat(viewModel.menuItems.count) * 50, 400)) // Max height constraint
-            //            .frame(width: 300) // Fixed width for the window
-            //            .listStyle(PlainListStyle())
-            //            .padding()
-            //            .background(Color.white)
-            //            .cornerRadius(10)
-            //            .shadow(radius: 10)
-            //            .scrollDisabled(true)
+            .frame(height: CGFloat(viewModel.menuItems.count) * 30)
             
             
             // Button to add a new menu item
@@ -94,10 +75,10 @@ struct ContentView: View {
             }
         }
         .padding(50)
-        //            .frame(height: geometry.size.height)
+        .frame(minWidth:480)
+        .fixedSize()
         
     }
-    //    }
 }
 
 #Preview {
