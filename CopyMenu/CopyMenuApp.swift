@@ -22,8 +22,7 @@ struct CopyMenuApp: App {
         
         Window("Edit Menu", id: EDIT_WINDOW_ID) {
             ContentView(viewModel: viewModel)
-                .frame(minWidth: 350, minHeight: 250)
-//                .fixedSize()
+                .frame(minWidth: 350, minHeight: max(CGFloat(viewModel.menuItems.count) * 50, 300))
         }
         .windowResizability(.contentSize)
         .defaultPosition(.center)
