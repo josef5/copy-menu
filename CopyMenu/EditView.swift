@@ -22,11 +22,7 @@ struct EditView: View {
                             TextField("", text: Binding(
                                 get: { menuItem.title },
                                 set: { newTitle in
-                                    if let index = viewModel.menuItems.firstIndex(where: { $0.id == menuItem.id }) {
-                                        viewModel.menuItems[index].title = newTitle
-                                        viewModel.saveMenuItems() // Save on edit
-                                        // TODO: encapsulate in method
-                                    }
+                                    viewModel.updateItem(menuItem, newTitle: newTitle)
                                 }
                             ))
                             
@@ -64,16 +60,18 @@ struct EditView: View {
             .frame(height: CGFloat(viewModel.menuItems.count) * 30)
             .scrollDisabled(true)
             
-            // TODO: Better buttons
-            // Button to add a new menu item
-            Button(action: {
-                viewModel.addItem()
-            }) {
-                Image(systemName: "plus")
-            }
+            Spacer().frame(height: 20)
             
-            Button("Close") {
-                dismissWindow(id: EDIT_WINDOW_ID)
+            HStack {
+                Button("Add Item") {
+                    viewModel.addItem()
+                }
+                
+                Spacer().frame(width: 20)
+                
+                Button("Close") {
+                    dismissWindow(id: EDIT_WINDOW_ID)
+                }
             }
         }
         .padding(50)
