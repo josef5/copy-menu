@@ -8,7 +8,7 @@
 import Foundation
 
 
-class CopyMenuViewModel: ObservableObject {
+class ViewModel: ObservableObject {
     @Published var menuItems: [MenuItem] = []
     
     // Key for UserDefaults
@@ -24,6 +24,7 @@ class CopyMenuViewModel: ObservableObject {
            let savedMenuItems = try? JSONDecoder().decode([MenuItem].self, from: data) {
             menuItems = savedMenuItems
         } else {
+            // TODO: Better initial data
             // Initial data if no menu items are found
             menuItems = [
                 MenuItem(title: "Pizza"),
@@ -63,17 +64,5 @@ class CopyMenuViewModel: ObservableObject {
         if let data = try? JSONEncoder().encode(menuItems) {
             UserDefaults.standard.set(data, forKey: menuListKey)
         }
-    }
-}
-
-// Model for a single MenuItem that conforms to Codable for persistence
-struct MenuItem: Identifiable, Codable, Hashable {
-    let id: UUID
-    var title: String
-    
-    // Initializer to create new menu items without specifying the id manually
-    init(id: UUID = UUID(), title: String) {
-        self.id = id
-        self.title = title
     }
 }

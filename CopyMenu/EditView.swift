@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @ObservedObject var viewModel: CopyMenuViewModel
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismissWindow) private var dismissWindow
     
     var body: some View {
@@ -25,6 +25,7 @@ struct EditView: View {
                                     if let index = viewModel.menuItems.firstIndex(where: { $0.id == menuItem.id }) {
                                         viewModel.menuItems[index].title = newTitle
                                         viewModel.saveMenuItems() // Save on edit
+                                        // TODO: encapsulate in method
                                     }
                                 }
                             ))
@@ -63,7 +64,7 @@ struct EditView: View {
             .frame(height: CGFloat(viewModel.menuItems.count) * 30)
             .scrollDisabled(true)
             
-            
+            // TODO: Better buttons
             // Button to add a new menu item
             Button(action: {
                 viewModel.addItem()
@@ -83,5 +84,5 @@ struct EditView: View {
 }
 
 #Preview {
-    EditView(viewModel: CopyMenuViewModel())
+    EditView(viewModel: ViewModel())
 }

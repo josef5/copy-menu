@@ -11,7 +11,7 @@ let EDIT_WINDOW_ID = "edit-window"
 
 @main
 struct CopyMenuApp: App {
-    @StateObject private var viewModel = CopyMenuViewModel()
+    @StateObject private var viewModel = ViewModel()
     @Environment(\.dismissWindow) private var dismissWindow
     
     var body: some Scene {

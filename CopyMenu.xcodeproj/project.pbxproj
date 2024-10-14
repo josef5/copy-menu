@@ -12,7 +12,7 @@
 		CD0213392CB45E5D00320DEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0213382CB45E5D00320DEF /* Assets.xcassets */; };
 		CD02133C2CB45E5D00320DEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD02133B2CB45E5D00320DEF /* Preview Assets.xcassets */; };
 		CD0213442CB4701E00320DEF /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0213432CB4701E00320DEF /* MenuBarView.swift */; };
-		CD0213482CB4725C00320DEF /* CopyMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0213472CB4725C00320DEF /* CopyMenuViewModel.swift */; };
+		CD0213482CB4725C00320DEF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0213472CB4725C00320DEF /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,8 @@
 		CD02133B2CB45E5D00320DEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD02133D2CB45E5D00320DEF /* CopyMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CopyMenu.entitlements; sourceTree = "<group>"; };
 		CD0213432CB4701E00320DEF /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
-		CD0213472CB4725C00320DEF /* CopyMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyMenuViewModel.swift; sourceTree = "<group>"; };
+		CD0213472CB4725C00320DEF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CDCC39F32CBD59480077E0C8 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +79,7 @@
 		CD0969AC2CB9C7A700FF4CF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD0213472CB4725C00320DEF /* CopyMenuViewModel.swift */,
+				CD0213472CB4725C00320DEF /* ViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,7 +156,7 @@
 			files = (
 				CD0213442CB4701E00320DEF /* MenuBarView.swift in Sources */,
 				CD0213372CB45E5A00320DEF /* EditView.swift in Sources */,
-				CD0213482CB4725C00320DEF /* CopyMenuViewModel.swift in Sources */,
+				CD0213482CB4725C00320DEF /* ViewModel.swift in Sources */,
 				CD0213352CB45E5A00320DEF /* CopyMenuApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

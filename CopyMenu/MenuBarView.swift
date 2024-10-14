@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuBarView: View {
-    @ObservedObject var viewModel: CopyMenuViewModel
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.openWindow) var openWindow
     
     var body: some View {
@@ -38,5 +38,5 @@ struct MenuBarView: View {
 }
 
 #Preview {
-    MenuBarView(viewModel: CopyMenuViewModel() )
+    MenuBarView(viewModel: ViewModel() )
 }
