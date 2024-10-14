@@ -15,6 +15,11 @@ struct MenuBarView: View {
         ForEach(viewModel.menuItems, id: \.self) { item in
             Button(item.title) {
                 print("Selected: \(item.title)")
+                
+                // Set string to clipboard
+                let pasteboard = NSPasteboard.general
+                pasteboard.declareTypes([.string], owner: nil)
+                NSPasteboard.general.setString(item.title, forType: .string)
             }
         }
         
@@ -27,7 +32,7 @@ struct MenuBarView: View {
         Divider()
         
         Button("Quit") {
-            
+            NSApplication.shared.terminate(nil)
         }
     }
 }
