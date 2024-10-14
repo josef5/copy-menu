@@ -21,7 +21,7 @@ struct CopyMenuApp: App {
         .menuBarExtraStyle(.menu)
         
         Window("Edit Menu", id: EDIT_WINDOW_ID) {
-            ContentView(viewModel: viewModel)
+            EditView(viewModel: viewModel)
                 .frame(minWidth: 350, minHeight: max(CGFloat(viewModel.menuItems.count) * 50, 300))
         }
         .windowResizability(.contentSize)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct EditView: View {
     @ObservedObject var viewModel: CopyMenuViewModel
     @Environment(\.dismissWindow) private var dismissWindow
     
@@ -83,5 +83,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(viewModel: CopyMenuViewModel())
+    EditView(viewModel: CopyMenuViewModel())
 }
