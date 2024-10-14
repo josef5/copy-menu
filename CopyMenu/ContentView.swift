@@ -61,6 +61,7 @@ struct ContentView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.plain)
             .frame(height: CGFloat(viewModel.menuItems.count) * 30)
+            .scrollDisabled(true)
             
             
             // Button to add a new menu item
